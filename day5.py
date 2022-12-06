@@ -22,14 +22,17 @@ for i in moves:
     counter+=1
 
 moves = [[int(x) for x in i] for i in moves]
-
+test = [4,1,4]
 for move in moves:
     for i in range(move[0]):
         
         moveBox.append(stackList[move[1]-1][-1])
         stackList[move[1]-1].pop()
-        stackList[move[2]-1].append(moveBox[0])
-        moveBox = []
+    moveBox.reverse()
+    for i in moveBox:
+        stackList[move[2]-1].append(moveBox)
+    
+    moveBox = []
 
 print(stackList)  
 
